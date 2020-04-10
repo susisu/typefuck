@@ -1,0 +1,41 @@
+# @susisu/typefuck
+[![Build Status](https://travis-ci.com/susisu/typefuck.svg?branch=master)](https://travis-ci.com/susisu/typefuck)
+
+Type-level [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) interpreter in TypeScript
+
+``` shell
+npm i @susisu/typefuck
+# or
+yarn add @susisu/typefuck
+```
+
+## Example
+``` typescript
+import { Brainfuck } from "@susisu/typefuck";
+
+type Program = [
+  ",",                               // mem[0] = get();
+  ">", ",",                          // mem[1] = get();
+  "<", "[",                          // while (mem[0]) {
+  ">", "[",                          //   while (mem[1]) {
+  ">", "+", ">", "+", "<", "<", "-", //     mem[2]++; mem[3]++; mem[1]--;
+  "]",                               //   }
+  ">", "[",                          //   while (mem[2]) {
+  "<", "+", ">", "-",                //     mem[1]++; mem[2]--;
+  "]",                               //   }
+  "<", "<", "-",                     //   mem[0]--;
+  "]",                               // }
+  ">", ">", ">", ".", ".", "."       // put(mem[3]); put(mem[3]); put(mem[3]);
+];
+type Input = [2, 3];
+type Output = Brainfuck<Program, Input>;
+// Output = [6, 6, 6]
+```
+
+## License
+
+[MIT License](http://opensource.org/licenses/mit-license.php)
+
+## Author
+
+Susisu ([GitHub](https://github.com/susisu), [Twitter](https://twitter.com/susisu2413))

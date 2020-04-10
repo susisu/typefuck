@@ -1,0 +1,1 @@
+export { Brainfuck } from "./vm";

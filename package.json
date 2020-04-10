@@ -1,0 +1,32 @@
+{
+  "name": "@susisu/typefuck",
+  "version": "0.1.0",
+  "description": "Type-level Brainfuck interpreter in TypeScript",
+  "repository": "https://github.com/susisu/typefuck.git",
+  "author": "Susisu <susisu2413@yahoo.co.jp>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "lint": "eslint --ext .js,.ts '*.js' src",
+    "lint-fix": "eslint --fix --ext .js,.ts '*.js' src",
+    "test": "tsc -p tsconfig.test.json --noEmit --incremental false",
+    "build": "tsc --build tsconfig.build.json",
+    "clean": "run-s clean:build clean:rm",
+    "clean:build": "tsc --build tsconfig.build.json --clean",
+    "clean:rm": "rimraf lib",
+    "prepublishOnly": "run-s clean lint test build"
+  },
+  "devDependencies": {
+    "@susisu/eslint-config": "^0.0.19",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-eslint-comments": "^3.1.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.4",
+    "typescript": "^3.8.3"
+  }
+}
