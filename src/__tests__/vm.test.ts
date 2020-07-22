@@ -1,5 +1,5 @@
 import { Brainfuck } from "../vm";
-import { Assert, Equal } from "./util";
+import { Assert, Equal } from "./assert";
 
 type Program = [
   ",",                               // mem[0] = get();

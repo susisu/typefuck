@@ -1,5 +1,5 @@
 import { Nil, Cons, Car, Cdr, ToConsList, FromRevConsList } from "../cons";
-import { Assert, Equal } from "./util";
+import { Assert, Equal } from "./assert";
 
 export type Test_Car_0 = Assert<Equal<Car<Nil>, never>>;
 export type Test_Car_1 = Assert<Equal<Car<Cons<42, Nil>>, 42>>;

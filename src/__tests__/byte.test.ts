@@ -1,5 +1,5 @@
 import { Incr, Decr } from "../byte";
-import { Assert, Equal } from "./util";
+import { Assert, Equal } from "./assert";
 
 export type Test_Incr_0 = Assert<Equal<Incr<0x00>, 0x01>>;
 export type Test_Incr_1 = Assert<Equal<Incr<0x7F>, 0x80>>;
