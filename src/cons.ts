@@ -10,15 +10,12 @@ export type Cdr<XS> = XS extends Cons<infer _Y, infer YS> ? YS : never;
 
 export type ToConsList<XS extends unknown[]> =
     XS extends [] ? Nil
-  : ((...xs: XS) => unknown) extends (y: infer Y, ...ys: infer YS) => unknown ? [Y, ToConsList<YS>]
+  : XS extends [infer Y, ...infer YS] ? [Y, ToConsList<YS>]
   : never;
 
 export type FromRevConsList<XS, YS extends unknown[] = []> = Recurse<FromRevConsListSub<XS, YS>>;
 
-type FromRevConsListSub<XS, YS extends unknown[] = []> =
+type FromRevConsListSub<XS, YS extends unknown[]> =
   XS extends Nil
     ? YS
-    : { __rec: FromRevConsListSub<Cdr<XS>, Unshift<Car<XS>, YS>> };
-
-type Unshift<X, XS extends unknown[]> =
-  ((x: X, ...xs: XS) => unknown) extends (...ys: infer YS) => unknown ? YS : never;
+    : { __rec: FromRevConsListSub<Cdr<XS>, [Car<XS>, ...YS]> };
