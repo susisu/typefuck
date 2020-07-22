@@ -1,4 +1,4 @@
-import { Nil, Cons, Car, Cdr } from "./cons";
+import { Nil, Cons, Car, Cdr } from "./list";
 
 export type Memory<L, H, R,> = {
   left: L,

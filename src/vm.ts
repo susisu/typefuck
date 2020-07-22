@@ -1,4 +1,4 @@
-import { Nil, Cons, Car, Cdr, ToConsList, FromRevConsList } from "./cons";
+import { Nil, Cons, Car, Cdr, Reverse } from "./list";
 import { Memory, Read, Write, MoveL, MoveR } from "./memory";
 import { Token } from "./token";
 import { Byte, Incr, Decr } from "./byte";
@@ -53,5 +53,4 @@ type RunSub<S> = S extends State<infer P, infer _M, infer _I, infer O, infer R, 
     : { __rec: RunSub<Next<S>> }
 ) : never;
 
-export type Brainfuck<P extends Token[] = [], I extends Byte[] = []> =
-  FromRevConsList<Run<Init<ToConsList<P>, ToConsList<I>>>>;
+export type Brainfuck<P extends Token[] = [], I extends Byte[] = []> = Reverse<Run<Init<P, I>>>;

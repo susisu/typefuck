@@ -1,5 +1,5 @@
 import { Memory, Read, Write, MoveL, MoveR } from "../memory";
-import { Nil, Cons } from "../cons";
+import { Nil, Cons } from "../list";
 import { Assert, Equal } from "./assert";
 
 type Mem0 = Memory<Nil, 42, Nil>;
