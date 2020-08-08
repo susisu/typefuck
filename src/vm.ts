@@ -1,4 +1,4 @@
-import { Cons, Head, Tail, Reverse } from "./list";
+import { Head, Tail, Cons, Snoc } from "./list";
 import { Memory, Read, Write, MoveL, MoveR } from "./memory";
 import { Token } from "./token";
 import { Byte, Incr, Decr } from "./byte";
@@ -29,7 +29,7 @@ type NextProc<P, M, I, O, R> = P extends [infer T, ...infer Q] ? (
   : T extends "," ? I extends []
     ? never
     : State<Q, Write<M, Head<I>>, Tail<I>, O, R, []>
-  : T extends "." ? State<Q, M, I, Cons<Read<M>, O>, R, []>
+  : T extends "." ? State<Q, M, I, Snoc<O, Read<M>>, R, []>
   : T extends "[" ? Read<M> extends 0x0
     ? State<Q, M, I, O, R, [unknown]>
     : State<Q, M, I, O, Cons<P, R>, []>
@@ -53,4 +53,4 @@ type RunSub<S> = S extends State<infer P, infer _M, infer _I, infer O, infer R, 
     : { __rec: RunSub<Next<S>> }
 ) : never;
 
-export type Brainfuck<P extends Token[] = [], I extends Byte[] = []> = Reverse<Run<Init<P, I>>>;
+export type Brainfuck<P extends Token[] = [], I extends Byte[] = []> = Run<Init<P, I>>;

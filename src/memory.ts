@@ -1,4 +1,4 @@
-import { Cons, Head, Tail } from "./list";
+import { Head, Tail, Cons } from "./list";
 
 export type Memory<L, H, R,> = {
   left: L,
