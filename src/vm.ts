@@ -1,4 +1,4 @@
-import { Nil, Cons, Car, Cdr, Reverse } from "./list";
+import { Nil, Cons, Head, Tail, Reverse } from "./list";
 import { Memory, Read, Write, MoveL, MoveR } from "./memory";
 import { Token } from "./token";
 import { Byte, Incr, Decr } from "./byte";
@@ -28,20 +28,20 @@ type NextProc<P, M, I, O, R> = P extends Cons<infer T, infer Q> ? (
   : T extends "<" ? State<Q, MoveL<M>, I, O, R, Nil>
   : T extends "," ? I extends Nil
     ? never
-    : State<Q, Write<M, Car<I>>, Cdr<I>, O, R, Nil>
+    : State<Q, Write<M, Head<I>>, Tail<I>, O, R, Nil>
   : T extends "." ? State<Q, M, I, Cons<Read<M>, O>, R, Nil>
   : T extends "[" ? Read<M> extends 0x0
     ? State<Q, M, I, O, R, Cons<Nil, Nil>>
     : State<Q, M, I, O, Cons<P, R>, Nil>
   : T extends "]" ? R extends Nil
     ? never
-    : State<Car<R>, M, I, O, Cdr<R>, Nil>
+    : State<Head<R>, M, I, O, Tail<R>, Nil>
   : State<Q, M, I, O, R, Nil>
 ) : never;
 
 type NextSkip<P, M, I, O, R, K> = P extends Cons<infer T, infer Q> ? (
     T extends "[" ? State<Q, M, I, O, R, Cons<Nil, K>>
-  : T extends "]" ? State<Q, M, I, O, R, Cdr<K>>
+  : T extends "]" ? State<Q, M, I, O, R, Tail<K>>
   : State<Q, M, I, O, R, K>
 ) : never;
 

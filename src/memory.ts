@@ -1,4 +1,4 @@
-import { Nil, Cons, Car, Cdr } from "./list";
+import { Nil, Cons, Head, Tail } from "./list";
 
 export type Memory<L, H, R,> = {
   left: L,
@@ -13,11 +13,11 @@ export type Write<M, B> = M extends Memory<infer L, infer _H, infer R> ? Memory<
 export type MoveL<M> = M extends Memory<infer L, infer H, infer R> ? (
   L extends Nil
     ? Memory<Nil, 0x0, Cons<H, R>>
-    : Memory<Cdr<L>, Car<L>, Cons<H, R>>
+    : Memory<Tail<L>, Head<L>, Cons<H, R>>
 ) : never;
 
 export type MoveR<M> = M extends Memory<infer L, infer H, infer R> ? (
   R extends Nil
     ? Memory<Cons<H, L>, 0x0, Nil>
-    : Memory<Cons<H, L>, Car<R>, Cdr<R>>
+    : Memory<Cons<H, L>, Head<R>, Tail<R>>
 ) : never;
