@@ -23,13 +23,13 @@ type Program = [
   ">", "[",                          //   while (mem[2]) {
   "<", "+", ">", "-",                //     mem[1]++; mem[2]--;
   "]",                               //   }
-  "<", "<", "-",                     //   mem[0]--;
+  ">", ".",                          //   put(mem[3]);
+  "<", "<", "<", "-",                //   mem[0]--;
   "]",                               // }
-  ">", ">", ">", ".", ".", "."       // put(mem[3]); put(mem[3]); put(mem[3]);
 ];
-type Input = [2, 3];
+type Input = [3, 2];
 type Output = Brainfuck<Program, Input>;
-// Output = [6, 6, 6]
+// Output = [2, 4, 6]
 ```
 
 ## License
