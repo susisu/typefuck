@@ -14,7 +14,7 @@ import { Assert, Equal } from "./assert";
 //   mem[0]--;
 // }
 type Program = ",>,<[>[>+>+<<-]>[<+>-]>.<<<-]";
-type Input = [3, 2];
+type Input = "\x03\x02";
 type Output = Brainfuck<Program, Input>;
 
-export type Test_Brainfuck = Assert<Equal<Output, [2, 4, 6]>>;
+export type Test_Brainfuck = Assert<Equal<Output, "\x02\x04\x06">>;

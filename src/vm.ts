@@ -1,6 +1,7 @@
-import { Head, Tail, Cons, Snoc } from "./list";
 import { Memory, Read, Write, MoveL, MoveR } from "./memory";
-import { Byte, Incr, Decr } from "./byte";
+import { Incr, Decr } from "./char";
+import { Head as SHead, Tail as STail, Append } from "./string";
+import { Head, Tail, Cons } from "./list";
 import { Recurse } from "./util";
 
 export type State<P, M, I, O, R, K> = {
@@ -12,7 +13,7 @@ export type State<P, M, I, O, R, K> = {
   skip: K,
 };
 
-export type Init<P = [], I = []> = State<P, Memory<[], 0x0, []>, I, [], [], []>;
+export type Init<P, I> = State<P, Memory<"", "\x00", "">, I, "", [], []>;
 
 export type Next<S> = S extends State<infer P, infer M, infer I, infer O, infer R, infer K> ? (
   K extends []
@@ -25,11 +26,11 @@ type NextProc<P, M, I, O, R> = P extends `${infer T}${infer Q}` ? (
   : T extends "-" ? State<Q, Write<M, Decr<Read<M>>>, I, O, R, []>
   : T extends ">" ? State<Q, MoveR<M>, I, O, R, []>
   : T extends "<" ? State<Q, MoveL<M>, I, O, R, []>
-  : T extends "," ? I extends []
+  : T extends "," ? I extends ""
     ? never
-    : State<Q, Write<M, Head<I>>, Tail<I>, O, R, []>
-  : T extends "." ? State<Q, M, I, Snoc<O, Read<M>>, R, []>
-  : T extends "[" ? Read<M> extends 0x0
+    : State<Q, Write<M, SHead<I>>, STail<I>, O, R, []>
+  : T extends "." ? State<Q, M, I, Append<O, Read<M>>, R, []>
+  : T extends "[" ? Read<M> extends "\x00"
     ? State<Q, M, I, O, R, [unknown]>
     : State<Q, M, I, O, Cons<P, R>, []>
   : T extends "]" ? R extends []
@@ -52,4 +53,4 @@ type RunSub<S> = S extends State<infer P, infer _M, infer _I, infer O, infer R, 
     : { __rec: RunSub<Next<S>> }
 ) : never;
 
-export type Brainfuck<P extends string, I extends Byte[] = []> = Run<Init<P, I>>;
+export type Brainfuck<P extends string, I extends string = ""> = Run<Init<P, I>>;
