@@ -1,6 +1,5 @@
 import { Head, Tail, Cons, Snoc } from "./list";
 import { Memory, Read, Write, MoveL, MoveR } from "./memory";
-import { Token } from "./token";
 import { Byte, Incr, Decr } from "./byte";
 import { Recurse } from "./util";
 
@@ -21,7 +20,7 @@ export type Next<S> = S extends State<infer P, infer M, infer I, infer O, infer 
     : NextSkip<P, M, I, O, R, K>
 ) : never;
 
-type NextProc<P, M, I, O, R> = P extends [infer T, ...infer Q] ? (
+type NextProc<P, M, I, O, R> = P extends `${infer T}${infer Q}` ? (
     T extends "+" ? State<Q, Write<M, Incr<Read<M>>>, I, O, R, []>
   : T extends "-" ? State<Q, Write<M, Decr<Read<M>>>, I, O, R, []>
   : T extends ">" ? State<Q, MoveR<M>, I, O, R, []>
@@ -39,7 +38,7 @@ type NextProc<P, M, I, O, R> = P extends [infer T, ...infer Q] ? (
   : State<Q, M, I, O, R, []>
 ) : never;
 
-type NextSkip<P, M, I, O, R, K> = P extends [infer T, ...infer Q] ? (
+type NextSkip<P, M, I, O, R, K> = P extends `${infer T}${infer Q}` ? (
     T extends "[" ? State<Q, M, I, O, R, Cons<unknown, K>>
   : T extends "]" ? State<Q, M, I, O, R, Tail<K>>
   : State<Q, M, I, O, R, K>
@@ -48,9 +47,9 @@ type NextSkip<P, M, I, O, R, K> = P extends [infer T, ...infer Q] ? (
 export type Run<S> = Recurse<RunSub<S>>;
 
 type RunSub<S> = S extends State<infer P, infer _M, infer _I, infer O, infer R, infer K> ? (
-  P extends []
+  P extends ""
     ? (R extends [] ? K extends [] ? O : never : never)
     : { __rec: RunSub<Next<S>> }
 ) : never;
 
-export type Brainfuck<P extends Token[] = [], I extends Byte[] = []> = Run<Init<P, I>>;
+export type Brainfuck<P extends string, I extends Byte[] = []> = Run<Init<P, I>>;
