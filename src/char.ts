@@ -166,5 +166,5 @@ type Decrs = {
   "\xFC": "\xFB", "\xFD": "\xFC", "\xFE": "\xFD", "\xFF": "\xFE",
 };
 
-export type Incr<C> = C extends Char ? Incrs[C] : never;
-export type Decr<C> = C extends Char ? Decrs[C] : never;
+export type Incr<C> = C extends Char ? Incrs[C] : "\x00";
+export type Decr<C> = C extends Char ? Decrs[C] : "\x00";
