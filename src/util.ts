@@ -1,6 +1,6 @@
-export type Recurse<T, H extends "__hack" = "__hack"> =
+export type Recurse<T> =
   T extends { __rec: unknown }
-    ? { [H0 in H]: Recurse<RecurseSub<T>> }[H]
+    ? Recurse<RecurseSub<T>>
     : T;
 
 type RecurseSub<T> =
