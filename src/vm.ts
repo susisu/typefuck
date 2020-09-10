@@ -27,7 +27,7 @@ type NextProc<P, M, I, O, R> = P extends `${infer T}${infer Q}` ? (
   : T extends ">" ? State<Q, MoveR<M>, I, O, R, []>
   : T extends "<" ? State<Q, MoveL<M>, I, O, R, []>
   : T extends "," ? I extends ""
-    ? never
+    ? State<Q, Write<M, "\x00">, I, O, R, []>
     : State<Q, Write<M, SHead<I>>, STail<I>, O, R, []>
   : T extends "." ? State<Q, M, I, Append<O, Read<M>>, R, []>
   : T extends "[" ? Read<M> extends "\x00"
