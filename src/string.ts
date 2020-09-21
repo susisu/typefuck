@@ -1,4 +1,4 @@
-export type Head<S> = S extends `${infer C}${infer R}` ? C : never;
+export type Head<S> = S extends `${infer C}${infer _R}` ? C : never;
 
 export type Tail<S> = S extends `${infer _C}${infer R}` ? R : never;
 
