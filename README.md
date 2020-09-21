@@ -13,29 +13,13 @@ yarn add @susisu/typefuck
 ``` typescript
 import { Brainfuck } from "@susisu/typefuck";
 
-type Program = [
-  ",",                               // mem[0] = get();
-  ">", ",",                          // mem[1] = get();
-  "<", "[",                          // while (mem[0]) {
-  ">", "[",                          //   while (mem[1]) {
-  ">", "+", ">", "+", "<", "<", "-", //     mem[2]++; mem[3]++; mem[1]--;
-  "]",                               //   }
-  ">", "[",                          //   while (mem[2]) {
-  "<", "+", ">", "-",                //     mem[1]++; mem[2]--;
-  "]",                               //   }
-  ">", ".",                          //   put(mem[3]);
-  "<", "<", "<", "-",                //   mem[0]--;
-  "]",                               // }
-];
-type Input = [3, 2];
-type Output = Brainfuck<Program, Input>;
-// Output = [2, 4, 6]
+type Program = ">,[>,]<[.<]";
+type Input = "Hello, world!";
+type Output = Brainfuck<Program, Input>; // = "!dlrow ,olleH"
 ```
 
 ## License
-
 [MIT License](http://opensource.org/licenses/mit-license.php)
 
 ## Author
-
 Susisu ([GitHub](https://github.com/susisu), [Twitter](https://twitter.com/susisu2413))
