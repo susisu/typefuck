@@ -1,3 +1,6 @@
+/**
+ * `Char` represents a single-byte character.
+ */
 export type Char =
   | "\x00" | "\x01" | "\x02" | "\x03" | "\x04" | "\x05" | "\x06" | "\x07"
   | "\x08" | "\x09" | "\x0A" | "\x0B" | "\x0C" | "\x0D" | "\x0E" | "\x0F"
@@ -166,5 +169,14 @@ type Decrs = {
   "\xFC": "\xFB", "\xFD": "\xFC", "\xFE": "\xFD", "\xFF": "\xFE",
 };
 
+/**
+ * `Incr<C>` computes the successor of a single-byte character `C`.
+ * If `C` is not a single-byte character, it returns \x00.
+ */
 export type Incr<C> = C extends Char ? Incrs[C] : "\x00";
+
+/**
+ * `Decr<C>` computes the predecessor of a single-byte character `C`.
+ * If `C` is not a single-byte character, it returns \x00.
+ */
 export type Decr<C> = C extends Char ? Decrs[C] : "\x00";
