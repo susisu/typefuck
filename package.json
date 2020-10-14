@@ -12,7 +12,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.ts '*.js' src",
     "lint-fix": "eslint --fix --ext .js,.ts '*.js' src",
-    "test": "tsc -p tsconfig.test.json --noEmit --incremental false",
+    "test": "tsc -p tsconfig.test.json --noEmit",
     "build": "tsc --build tsconfig.build.json",
     "clean": "run-s clean:build clean:rm",
     "clean:build": "tsc --build tsconfig.build.json --clean",
