@@ -1,5 +1,5 @@
 # @susisu/typefuck
-[![Build Status](https://travis-ci.com/susisu/typefuck.svg?branch=master)](https://travis-ci.com/susisu/typefuck)
+[![CI](https://github.com/susisu/typefuck/workflows/CI/badge.svg)](https://github.com/susisu/typefuck/actions?query=workflow%3ACI)
 
 Type-level [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) interpreter in TypeScript
 
