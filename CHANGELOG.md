@@ -1,4 +1,4 @@
-## 0.3.0 (unreleased)
+## 0.3.0 (2020-11-20)
 ### Features
 - `Brainfuck<Program, Input>` now takes string literal types
   - You can simply write `Brainfuck<",+.", "A">` instead of `Brainfuck<[",", "+", "."], [65]>`
