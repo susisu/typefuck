@@ -18,6 +18,7 @@ module.exports = {
       rules: {
         "max-len": ["warn", 120],
         "@typescript-eslint/naming-convention": "off",
+        "@typescript-eslint/no-unused-vars": ["error", { varsIgnorePattern: "^_" }],
         "eslint-comments/no-unused-disable": "error",
       },
     },
