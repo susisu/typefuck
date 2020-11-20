@@ -20,16 +20,16 @@
     "prepublishOnly": "run-s clean lint test build"
   },
   "peerDependencies": {
-    "typescript": "4.1.1-rc"
+    "typescript": ">=4.1.2"
   },
   "devDependencies": {
-    "@susisu/eslint-config": "^0.0.27",
-    "eslint": "^7.9.0",
-    "eslint-config-prettier": "^6.11.0",
+    "@susisu/eslint-config": "^0.0.28",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-prettier": "^3.1.4",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.1.2",
-    "typescript": "4.1.1-rc"
+    "typescript": ">=4.1.2"
   }
 }
