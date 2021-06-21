@@ -1,7 +1,6 @@
 "use strict";
 
 module.exports = {
-  plugins: ["prettier"],
   overrides: [
     {
       files: ["*.{ts,tsx}"],
@@ -38,7 +37,6 @@ module.exports = {
         node: true,
       },
       rules: {
-        "prettier/prettier": "error",
         "eslint-comments/no-unused-disable": "error",
       },
     },
