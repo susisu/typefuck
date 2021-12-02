@@ -1,6 +1,7 @@
 /**
  * `Char` represents a single-byte character.
  */
+// prettier-ignore
 export type Char =
   | "\x00" | "\x01" | "\x02" | "\x03" | "\x04" | "\x05" | "\x06" | "\x07"
   | "\x08" | "\x09" | "\x0A" | "\x0B" | "\x0C" | "\x0D" | "\x0E" | "\x0F"
@@ -35,6 +36,7 @@ export type Char =
   | "\xF0" | "\xF1" | "\xF2" | "\xF3" | "\xF4" | "\xF5" | "\xF6" | "\xF7"
   | "\xF8" | "\xF9" | "\xFA" | "\xFB" | "\xFC" | "\xFD" | "\xFE" | "\xFF";
 
+// prettier-ignore
 type Incrs = {
   "\x00": "\x01", "\x01": "\x02", "\x02": "\x03", "\x03": "\x04",
   "\x04": "\x05", "\x05": "\x06", "\x06": "\x07", "\x07": "\x08",
@@ -102,6 +104,7 @@ type Incrs = {
   "\xFC": "\xFD", "\xFD": "\xFE", "\xFE": "\xFF", "\xFF": "\x00",
 };
 
+// prettier-ignore
 type Decrs = {
   "\x00": "\xFF", "\x01": "\x00", "\x02": "\x01", "\x03": "\x02",
   "\x04": "\x03", "\x05": "\x04", "\x06": "\x05", "\x07": "\x06",

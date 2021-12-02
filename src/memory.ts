@@ -9,9 +9,9 @@ import { Head, Tail, Append } from "./string";
  * When the memory head moves left / right and `L` / `R` is empty, it is expanded by appending \x00.
  */
 export type Memory<L, H, R> = {
-  left: L,
-  head: H,
-  right: R,
+  left: L;
+  head: H;
+  right: R;
 };
 
 /**
@@ -27,6 +27,7 @@ export type Write<M, C> = M extends Memory<infer L, infer _H, infer R> ? Memory<
 /**
  * `MoveL<M>` moves the memory head left.
  */
+// prettier-ignore
 export type MoveL<M> = M extends Memory<infer L, infer H, infer R> ? (
   L extends ""
     ? Memory<"", "\x00", Append<H, R>>
@@ -36,6 +37,7 @@ export type MoveL<M> = M extends Memory<infer L, infer H, infer R> ? (
 /**
  * `MoveR<M>` moves the memory head right.
  */
+// prettier-ignore
 export type MoveR<M> = M extends Memory<infer L, infer H, infer R> ? (
   R extends ""
     ? Memory<Append<H, L>, "\x00", "">

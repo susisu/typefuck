@@ -4,7 +4,7 @@ module.exports = {
   overrides: [
     {
       files: ["*.{ts,tsx}"],
-      extends: ["@susisu/eslint-config/preset/ts-types"],
+      extends: ["@susisu/eslint-config/preset/ts-types", "prettier"],
       parserOptions: {
         ecmaVersion: 2019,
         sourceType: "module",
@@ -12,7 +12,6 @@ module.exports = {
       },
       env: {
         es6: true,
-        browser: true,
       },
       rules: {
         "max-len": ["warn", 120],

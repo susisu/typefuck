@@ -16,12 +16,12 @@ import { Recurse } from "./util";
  * the program.
  */
 export type State<P, M, I, O, R, K> = {
-  program: P,
-  memory: M,
-  input: I,
-  output: O,
-  return: R,
-  skip: K,
+  program: P;
+  memory: M;
+  input: I;
+  output: O;
+  return: R;
+  skip: K;
 };
 
 /**
@@ -32,12 +32,14 @@ export type Init<P, I> = State<P, Memory<"", "\x00", "">, I, "", [], []>;
 /**
  * `Next<S>` runs the program one step and returns the next state.
  */
+// prettier-ignore
 export type Next<S> = S extends State<infer P, infer M, infer I, infer O, infer R, infer K> ? (
   K extends []
     ? NextProc<P, M, I, O, R>
     : NextSkip<P, M, I, O, R, K>
 ) : never;
 
+// prettier-ignore
 type NextProc<P, M, I, O, R> = P extends `${infer T}${infer Q}` ? (
     T extends "+" ? State<Q, Write<M, Incr<Read<M>>>, I, O, R, []>
   : T extends "-" ? State<Q, Write<M, Decr<Read<M>>>, I, O, R, []>
@@ -56,6 +58,7 @@ type NextProc<P, M, I, O, R> = P extends `${infer T}${infer Q}` ? (
   : State<Q, M, I, O, R, []>
 ) : never;
 
+// prettier-ignore
 type NextSkip<P, M, I, O, R, K> = P extends `${infer T}${infer Q}` ? (
     T extends "[" ? State<Q, M, I, O, R, Cons<unknown, K>>
   : T extends "]" ? State<Q, M, I, O, R, Tail<K>>
@@ -67,6 +70,7 @@ type NextSkip<P, M, I, O, R, K> = P extends `${infer T}${infer Q}` ? (
  */
 export type Run<S> = Recurse<RunSub<S>>;
 
+// prettier-ignore
 type RunSub<S> = S extends State<infer P, infer _M, infer _I, infer O, infer R, infer K> ? (
   P extends ""
     ? (R extends [] ? K extends [] ? O : never : never)
