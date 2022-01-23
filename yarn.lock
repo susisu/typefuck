@@ -1303,10 +1303,10 @@ type-fest@^0.20.2:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.20.2.tgz#1bf207f4b28f91583666cb5fbd327887301cd5f4"
   integrity sha512-Ne+eE4r0/iWnpAxD852z3A+N0Bt5RN//NjJwRd2VFHEmrywxf5vsZlh4R6lixl6B+wz/8d+maTSAkN1FIkI3LQ==
 
-typescript@>=4.5.3:
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.3.tgz#afaa858e68c7103317d89eb90c5d8906268d353c"
-  integrity sha512-eVYaEHALSt+s9LbvgEv4Ef+Tdq7hBiIZgii12xXJnukryt3pMgJf6aKhoCZ3FWQsu6sydEnkg11fYXLzhLBjeQ==
+typescript@4.6.0-beta:
+  version "4.6.0-beta"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.0-beta.tgz#274a93fbde92a2c3a5507bbb5f70cb199cbadf40"
+  integrity sha512-xg5avH08DioTdxex568HFLHvnHWxGzpu9FK0ehLNwlqzx/kjy5/qEkBmkbPlvC9xs45bc7gbAbEhNqtczJsHAg==
 
 unbox-primitive@^1.0.1:
   version "1.0.1"
