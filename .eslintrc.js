@@ -4,7 +4,11 @@ module.exports = {
   overrides: [
     {
       files: ["*.{ts,tsx}"],
-      extends: ["@susisu/eslint-config/preset/ts-types", "prettier"],
+      extends: [
+        "@susisu/eslint-config/preset/ts",
+        "plugin:eslint-comments/recommended",
+        "prettier",
+      ],
       parserOptions: {
         ecmaVersion: 2019,
         sourceType: "module",
@@ -23,7 +27,7 @@ module.exports = {
     {
       files: ["*.js"],
       extends: [
-        "@susisu/eslint-config/preset/es",
+        "@susisu/eslint-config/preset/js",
         "plugin:eslint-comments/recommended",
         "prettier",
       ],
