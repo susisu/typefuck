@@ -1,3 +1,8 @@
+## 0.3.1 (2022-08-31)
+- No changes, except few minor and internal updates
+  - Apply Prettier
+  - Upgrade devDependencies
+
 ## 0.3.0 (2020-11-20)
 ### Features
 - `Brainfuck<Program, Input>` now takes string literal types
