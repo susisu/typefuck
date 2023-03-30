@@ -9,6 +9,7 @@
   "files": [
     "lib"
   ],
+  "sideEffects": false,
   "scripts": {
     "lint": "run-s lint:eslint lint:prettier",
     "lint-fix": "run-s lint-fix:eslint lint-fix:prettier",
