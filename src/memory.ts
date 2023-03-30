@@ -1,4 +1,4 @@
-import { Head, Tail, Append } from "./string";
+import type { Head, Tail, Append } from "./string";
 
 /**
  * `Memory<L, H, R>` represents a snapshot of the memory.

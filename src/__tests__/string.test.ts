@@ -1,5 +1,5 @@
-import { Head, Tail, Append } from "../string";
-import { Assert, Equal } from "./assert";
+import type { Head, Tail, Append } from "../string";
+import type { Assert, Equal } from "./assert";
 
 export type Test_Head_0 = Assert<Equal<Head<"">, never>>;
 export type Test_Head_1 = Assert<Equal<Head<"\x42">, "\x42">>;

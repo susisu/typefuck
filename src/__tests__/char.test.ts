@@ -1,5 +1,5 @@
-import { Incr, Decr } from "../char";
-import { Assert, Equal } from "./assert";
+import type { Incr, Decr } from "../char";
+import type { Assert, Equal } from "./assert";
 
 export type Test_Incr_0 = Assert<Equal<Incr<"\x00">, "\x01">>;
 export type Test_Incr_1 = Assert<Equal<Incr<"\x7F">, "\x80">>;

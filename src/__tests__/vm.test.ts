@@ -1,5 +1,5 @@
-import { Brainfuck } from "../vm";
-import { Assert, Equal } from "./assert";
+import type { Brainfuck } from "../vm";
+import type { Assert, Equal } from "./assert";
 
 // mem[0] = get();
 // mem[1] = get();

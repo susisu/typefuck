@@ -1,5 +1,5 @@
-import { Memory, Read, Write, MoveL, MoveR } from "../memory";
-import { Assert, Equal } from "./assert";
+import type { Memory, Read, Write, MoveL, MoveR } from "../memory";
+import type { Assert, Equal } from "./assert";
 
 type Mem0 = Memory<"", "\x42", "">;
 type Mem1 = Memory<"\x41", "\x42", "\x43">;

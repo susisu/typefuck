@@ -11,7 +11,7 @@ yarn add @susisu/typefuck
 
 ## Example
 ``` typescript
-import { Brainfuck } from "@susisu/typefuck";
+import type { Brainfuck } from "@susisu/typefuck";
 
 type Program = ">,[>,]<[.<]";
 type Input = "Hello, world!";

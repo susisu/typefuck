@@ -1,8 +1,8 @@
-import { Memory, Read, Write, MoveL, MoveR } from "./memory";
-import { Incr, Decr } from "./char";
-import { Head as SHead, Tail as STail, Append } from "./string";
-import { Head, Tail, Cons } from "./list";
-import { Recurse } from "./util";
+import type { Memory, Read, Write, MoveL, MoveR } from "./memory";
+import type { Incr, Decr } from "./char";
+import type { Head as SHead, Tail as STail, Append } from "./string";
+import type { Head, Tail, Cons } from "./list";
+import type { Recurse } from "./util";
 
 /**
  * `State<P, M, I, O, R, K>` represents a state of the VM.
