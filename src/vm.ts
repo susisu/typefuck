@@ -15,7 +15,7 @@ import type { Recurse } from "./util";
  * `K` is a counter (list) to determine whether the VM should run or skip the next instruction of
  * the program.
  */
-export type State<P, M, I, O, R, K> = {
+type State<P, M, I, O, R, K> = {
   program: P;
   memory: M;
   input: I;
@@ -27,13 +27,13 @@ export type State<P, M, I, O, R, K> = {
 /**
  * `Init<P, I>` initializes a state with a program `P` and an input `I`.
  */
-export type Init<P, I> = State<P, Memory<"", "\x00", "">, I, "", [], []>;
+type Init<P, I> = State<P, Memory<"", "\x00", "">, I, "", [], []>;
 
 /**
  * `Next<S>` runs the program one step and returns the next state.
  */
 // prettier-ignore
-export type Next<S> = S extends State<infer P, infer M, infer I, infer O, infer R, infer K> ? (
+type Next<S> = S extends State<infer P, infer M, infer I, infer O, infer R, infer K> ? (
   K extends []
     ? NextProc<P, M, I, O, R>
     : NextSkip<P, M, I, O, R, K>
@@ -68,7 +68,7 @@ type NextSkip<P, M, I, O, R, K> = P extends `${infer T}${infer Q}` ? (
 /**
  * `Run<S>` runs the program and returns the final output.
  */
-export type Run<S> = Recurse<RunSub<S>>;
+type Run<S> = Recurse<RunSub<S>>;
 
 // prettier-ignore
 type RunSub<S> = S extends State<infer P, infer _M, infer _I, infer O, infer R, infer K> ? (
