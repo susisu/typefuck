@@ -1,3 +1,8 @@
+## 0.4.0 (2023-08-26)
+
+- Union inputs are now handled distributively
+  - e.g. `Brainfuck<P1 | P2, I1 | I2> = Brainfuck<P1, I1> | Brainfuck<P1, I2> | Brainfuck<P2, I1> | Brainfuck<P2, I2>`
+
 ## 0.3.2 (2023-07-21)
 
 - Include source files in the distribution
