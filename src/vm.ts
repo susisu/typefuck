@@ -80,4 +80,8 @@ type RunSub<S> = S extends State<infer P, infer _M, infer _I, infer O, infer R, 
 /**
  * `Brainfuck<P, I>` runs a program `P` with an input `I`.
  */
-export type Brainfuck<P extends string, I extends string = ""> = Run<Init<P, I>>;
+export type Brainfuck<P extends string, I extends string = ""> = P extends unknown
+  ? I extends unknown
+    ? Run<Init<P, I>>
+    : never
+  : never;

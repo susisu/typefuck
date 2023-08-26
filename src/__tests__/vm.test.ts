@@ -22,3 +22,10 @@ type Program_1 = ">,[>,]<[.<]";
 type Input_1 = "Hello, world!";
 type Output_1 = Brainfuck<Program_1, Input_1>;
 export type Test_Brainfuck_1 = Assert<Equal<Output_1, "!dlrow ,olleH">>;
+
+type Program_2 = ",[.,]" | ">,[>,]<[.<]";
+type Input_2 = "Hello, world!" | "Bye";
+type Output_2 = Brainfuck<Program_2, Input_2>;
+export type Test_Brainfuck_2 = Assert<
+  Equal<Output_2, "Hello, world!" | "!dlrow ,olleH" | "Bye" | "eyB">
+>;
