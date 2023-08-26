@@ -5,9 +5,12 @@
 Type-level [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) interpreter in TypeScript
 
 ``` shell
-npm i @susisu/typefuck
-# or
+# npm
+npm i --save @susisu/typefuck
+# yarn
 yarn add @susisu/typefuck
+# pnpm
+pnpm add @susisu/typefuck
 ```
 
 ## Example
