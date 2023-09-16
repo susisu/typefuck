@@ -22,7 +22,6 @@ module.exports = [
           globals: globals.es2021,
         },
         rules: {
-          "max-len": ["warn", 120],
           "@typescript-eslint/naming-convention": "off",
           "@typescript-eslint/no-unused-vars": ["error", { varsIgnorePattern: "^_" }],
         },
