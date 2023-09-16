@@ -14,7 +14,6 @@ module.exports = [
       eslintConfigPrettier,
       {
         languageOptions: {
-          ecmaVersion: 2022,
           sourceType: "module",
           parserOptions: {
             project: "./tsconfig.json",
@@ -37,7 +36,6 @@ module.exports = [
       eslintConfigPrettier,
       {
         languageOptions: {
-          ecmaVersion: 2022,
           sourceType: "commonjs",
           globals: {
             ...globals.es2021,
