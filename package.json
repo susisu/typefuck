@@ -34,7 +34,6 @@
     "@susisu/eslint-config": "^0.0.67",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-eslint-comments": "^3.2.0",
     "globals": "^13.21.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.0.3",
