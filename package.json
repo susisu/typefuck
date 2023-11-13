@@ -14,18 +14,16 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "lint": "run-s lint:eslint lint:prettier",
-    "lint-fix": "run-s lint-fix:eslint lint-fix:prettier",
-    "lint:eslint": "eslint src '*.js'",
-    "lint-fix:eslint": "eslint --fix src '*.js'",
-    "lint:prettier": "prettier --check src '*.js'",
-    "lint-fix:prettier": "prettier --write src '*.js'",
+    "format": "prettier --write src '*.js'",
+    "format:check": "prettier --check src '*.js'",
+    "lint": "eslint --fix src '*.js'",
+    "lint:check": "eslint src '*.js'",
     "test": "tsc -p tsconfig.test.json --noEmit",
     "build": "tsc --build tsconfig.build.json",
     "clean": "run-s clean:build clean:rm",
     "clean:build": "tsc --build tsconfig.build.json --clean",
     "clean:rm": "rimraf lib",
-    "prepublishOnly": "run-s clean lint test build"
+    "prepublishOnly": "run-s clean format:check lint:check test build"
   },
   "peerDependencies": {
     "typescript": ">=4.1.2"
