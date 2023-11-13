@@ -40,21 +40,21 @@ type Next<S> =
   : never;
 
 type NextProc<P, M, I, O, R> =
-  P extends `${infer T}${infer Q}` ?
-    T extends "+" ? State<Q, Write<M, Incr<Read<M>>>, I, O, R, []>
-    : T extends "-" ? State<Q, Write<M, Decr<Read<M>>>, I, O, R, []>
-    : T extends ">" ? State<Q, MoveR<M>, I, O, R, []>
-    : T extends "<" ? State<Q, MoveL<M>, I, O, R, []>
-    : T extends "," ?
+  P extends `${infer C}${infer Q}` ?
+    C extends "+" ? State<Q, Write<M, Incr<Read<M>>>, I, O, R, []>
+    : C extends "-" ? State<Q, Write<M, Decr<Read<M>>>, I, O, R, []>
+    : C extends ">" ? State<Q, MoveR<M>, I, O, R, []>
+    : C extends "<" ? State<Q, MoveL<M>, I, O, R, []>
+    : C extends "," ?
       I extends "" ?
         State<Q, Write<M, "\x00">, I, O, R, []>
       : State<Q, Write<M, SHead<I>>, STail<I>, O, R, []>
-    : T extends "." ? State<Q, M, I, Append<O, Read<M>>, R, []>
-    : T extends "[" ?
+    : C extends "." ? State<Q, M, I, Append<O, Read<M>>, R, []>
+    : C extends "[" ?
       Read<M> extends "\x00" ?
         State<Q, M, I, O, R, [unknown]>
       : State<Q, M, I, O, Cons<P, R>, []>
-    : T extends "]" ?
+    : C extends "]" ?
       R extends [] ?
         never
       : State<Head<R>, M, I, O, Tail<R>, []>
@@ -62,9 +62,9 @@ type NextProc<P, M, I, O, R> =
   : never;
 
 type NextSkip<P, M, I, O, R, K> =
-  P extends `${infer T}${infer Q}` ?
-    T extends "[" ? State<Q, M, I, O, R, Cons<unknown, K>>
-    : T extends "]" ? State<Q, M, I, O, R, Tail<K>>
+  P extends `${infer C}${infer Q}` ?
+    C extends "[" ? State<Q, M, I, O, R, Cons<unknown, K>>
+    : C extends "]" ? State<Q, M, I, O, R, Tail<K>>
     : State<Q, M, I, O, R, K>
   : never;
 
