@@ -13,4 +13,5 @@ module.exports = {
   bracketSameLine: false,
   arrowParens: "always",
   endOfLine: "lf",
+  experimentalTernaries: true,
 };

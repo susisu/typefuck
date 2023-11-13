@@ -40,11 +40,9 @@ type RepeatSub<
 > = L["length"] extends N ? R : { __rec: RepeatSub<S, N, `${R}${S}`, [...L, unknown]> };
 
 type Reverse<S extends string> = Recurse<ReverseSub<S, "">>;
-// prettier-ignore
-type ReverseSub<S extends string, R extends string> =
-    S extends "" ? R
-  : S extends `${infer A}${infer B}` ? { __rec: ReverseSub<B, `${A}${R}`> }
-  : never;
+type ReverseSub<S extends string, R extends string> = S extends "" ? R
+: S extends `${infer A}${infer B}` ? { __rec: ReverseSub<B, `${A}${R}`> }
+: never;
 
 type Program_3 = ">,[>,]<[.<]";
 type Input_3 = Repeat<"ABCD", 1000>;

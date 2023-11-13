@@ -11,4 +11,9 @@ export type Tail<S> = S extends `${infer _C}${infer R}` ? R : never;
 /**
  * `Append<S, T>` appends a string `S` to another string `T`.
  */
-export type Append<S, T> = S extends string ? (T extends string ? `${S}${T}` : never) : never;
+export type Append<S, T> =
+  S extends string ?
+    T extends string ?
+      `${S}${T}`
+    : never
+  : never;
