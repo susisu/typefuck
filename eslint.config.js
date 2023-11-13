@@ -10,7 +10,7 @@ module.exports = [
       files: ["**/*.ts"],
     },
     [
-      config.tsTypeChecked,
+      config.tsTypeChecked(),
       eslintConfigPrettier,
       {
         languageOptions: {
@@ -32,7 +32,7 @@ module.exports = [
       files: ["**/*.js"],
     },
     [
-      config.js,
+      config.js(),
       eslintConfigPrettier,
       {
         languageOptions: {
