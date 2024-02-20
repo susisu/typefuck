@@ -1,6 +1,6 @@
 import type { Memory, Read, Write, MoveL, MoveR } from "./memory";
 import type { Incr, Decr } from "./char";
-import type { Head as SHead, Tail as STail, Append } from "./string";
+import type { Head as SHead, Tail as STail, Concat } from "./string";
 import type { Head, Tail, Cons } from "./list";
 import type { Recurse } from "./util";
 
@@ -49,7 +49,7 @@ type NextProc<P, M, I, O, R> =
       I extends "" ?
         State<Q, Write<M, "\x00">, I, O, R, []>
       : State<Q, Write<M, SHead<I>>, STail<I>, O, R, []>
-    : C extends "." ? State<Q, M, I, Append<O, Read<M>>, R, []>
+    : C extends "." ? State<Q, M, I, Concat<O, Read<M>>, R, []>
     : C extends "[" ?
       Read<M> extends "\x00" ?
         State<Q, M, I, O, R, [unknown]>

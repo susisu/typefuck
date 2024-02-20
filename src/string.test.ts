@@ -1,6 +1,6 @@
 import type { Equal } from "./__tests__/utils";
 import { describe, it, assert } from "./__tests__/utils";
-import type { Head, Tail, Append } from "./string";
+import type { Head, Tail, Concat } from "./string";
 
 describe("Head", () => {
   it("gets the first character of a string", () => {
@@ -24,11 +24,11 @@ describe("Tail", () => {
   });
 });
 
-describe("Append", () => {
+describe("Concat", () => {
   it("concatenates two strings", () => {
-    assert<Equal<Append<"\x42", "">, "\x42">>();
-    assert<Equal<Append<"\x42", "\x84">, "\x42\x84">>();
-    assert<Equal<Append<"", "\x42">, "\x42">>();
-    assert<Equal<Append<"\x84", "\x42">, "\x84\x42">>();
+    assert<Equal<Concat<"\x42", "">, "\x42">>();
+    assert<Equal<Concat<"\x42", "\x84">, "\x42\x84">>();
+    assert<Equal<Concat<"", "\x42">, "\x42">>();
+    assert<Equal<Concat<"\x84", "\x42">, "\x84\x42">>();
   });
 });
