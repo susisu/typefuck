@@ -2,7 +2,7 @@ import type { Memory, Read, Write, MoveL, MoveR } from "./memory";
 import type { Incr, Decr } from "./char";
 import type { Head as SHead, Tail as STail, Concat } from "./string";
 import type { Head, Tail, Cons } from "./list";
-import type { Recurse } from "./util";
+import type { Recurse } from "./utils";
 
 /**
  * `State<P, M, I, O, R, K>` represents a state of the VM.

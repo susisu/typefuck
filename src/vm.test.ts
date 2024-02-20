@@ -1,7 +1,7 @@
 import type { Equal } from "./__tests__/utils";
 import { describe, it, assert } from "./__tests__/utils";
-import type { Recurse } from "./util";
 import type { Brainfuck } from "./vm";
+import type { Recurse } from "./utils";
 
 describe("Brainfuck", () => {
   it("runs a simple calculation", () => {
