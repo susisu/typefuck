@@ -1,48 +1,24 @@
 "use strict";
 
-const { config, map } = require("@susisu/eslint-config");
-const eslintConfigPrettier = require("eslint-config-prettier");
+const { config } = require("@susisu/eslint-config");
 const globals = require("globals");
 
-module.exports = [
-  ...map(
-    {
-      files: ["**/*.ts"],
+module.exports = config({}, [
+  {
+    files: ["src/**/*.ts"],
+    rules: {
+      "@typescript-eslint/naming-convention": "off",
+      "@typescript-eslint/no-unused-vars": ["error", { varsIgnorePattern: "^_" }],
     },
-    [
-      config.tsTypeChecked(),
-      eslintConfigPrettier,
-      {
-        languageOptions: {
-          sourceType: "module",
-          parserOptions: {
-            project: "./tsconfig.json",
-          },
-          globals: globals.es2021,
-        },
-        rules: {
-          "@typescript-eslint/naming-convention": "off",
-          "@typescript-eslint/no-unused-vars": ["error", { varsIgnorePattern: "^_" }],
-        },
+  },
+  {
+    files: ["*.js"],
+    languageOptions: {
+      sourceType: "commonjs",
+      globals: {
+        ...globals.es2021,
+        ...globals.node,
       },
-    ]
-  ),
-  ...map(
-    {
-      files: ["**/*.js"],
     },
-    [
-      config.js(),
-      eslintConfigPrettier,
-      {
-        languageOptions: {
-          sourceType: "commonjs",
-          globals: {
-            ...globals.es2021,
-            ...globals.node,
-          },
-        },
-      },
-    ]
-  ),
-];
+  },
+]);
