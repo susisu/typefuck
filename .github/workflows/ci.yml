@@ -11,9 +11,9 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - '16'
           - '18'
           - '20'
+          - '21'
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
