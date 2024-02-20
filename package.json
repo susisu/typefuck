@@ -5,7 +5,21 @@
   "repository": "https://github.com/susisu/typefuck.git",
   "author": "Susisu <susisu2413@yahoo.co.jp>",
   "license": "MIT",
+  "type": "module",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./lib/index.js",
+        "types": "./lib/index.d.ts"
+      },
+      "require": {
+        "default": "./lib/index.cjs",
+        "types": "./lib/index.d.cts"
+      }
+    }
+  },
   "files": [
     "lib",
     "src",
@@ -18,12 +32,9 @@
     "format:check": "prettier --check src '*.js'",
     "lint": "eslint --fix src '*.js'",
     "lint:check": "eslint src '*.js'",
-    "test": "tsc -p tsconfig.test.json --noEmit",
-    "build": "tsc --build tsconfig.build.json",
-    "clean": "run-s clean:build clean:rm",
-    "clean:build": "tsc --build tsconfig.build.json --clean",
-    "clean:rm": "rimraf lib",
-    "prepublishOnly": "run-s clean format:check lint:check test build"
+    "test": "tsc -p tsconfig.json --noEmit",
+    "build": "tsup",
+    "prepublishOnly": "run-s format:check lint:check test build"
   },
   "peerDependencies": {
     "typescript": ">=4.1.2"
@@ -35,7 +46,7 @@
     "globals": "^14.0.0",
     "npm-run-all2": "^6.1.2",
     "prettier": "^3.2.5",
-    "rimraf": "^5.0.5",
+    "tsup": "^8.0.2",
     "typescript": "~5.3.3"
   }
 }

@@ -1,9 +1,7 @@
-"use strict";
+import { config } from "@susisu/eslint-config";
+import globals from "globals";
 
-const { config } = require("@susisu/eslint-config");
-const globals = require("globals");
-
-module.exports = config({}, [
+export default config({}, [
   {
     files: ["src/**/*.ts"],
     rules: {
@@ -14,7 +12,6 @@ module.exports = config({}, [
   {
     files: ["*.js"],
     languageOptions: {
-      sourceType: "commonjs",
       globals: {
         ...globals.es2021,
         ...globals.node,
