@@ -32,17 +32,14 @@ export type Test_Brainfuck_2 = Assert<
 >;
 
 type Repeat<S extends string, N extends number> = Recurse<RepeatSub<S, N, "", []>>;
-type RepeatSub<
-  S extends string,
-  N extends number,
-  R extends string,
-  L extends unknown[],
-> = L["length"] extends N ? R : { __rec: RepeatSub<S, N, `${R}${S}`, [...L, unknown]> };
+type RepeatSub<S extends string, N extends number, R extends string, L extends unknown[]> =
+  L["length"] extends N ? R : { __rec: RepeatSub<S, N, `${R}${S}`, [...L, unknown]> };
 
 type Reverse<S extends string> = Recurse<ReverseSub<S, "">>;
-type ReverseSub<S extends string, R extends string> = S extends "" ? R
-: S extends `${infer A}${infer B}` ? { __rec: ReverseSub<B, `${A}${R}`> }
-: never;
+type ReverseSub<S extends string, R extends string> =
+  S extends "" ? R
+  : S extends `${infer A}${infer B}` ? { __rec: ReverseSub<B, `${A}${R}`> }
+  : never;
 
 type Program_3 = ">,[>,]<[.<]";
 type Input_3 = Repeat<"ABCD", 1000>;
