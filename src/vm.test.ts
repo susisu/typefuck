@@ -37,7 +37,7 @@ describe("Brainfuck", () => {
     assert<Equal<Output, "Hello, world!" | "!dlrow ,olleH" | "Bye" | "eyB">>();
   });
 
-  it("continues to run programs for at least 4,000 steps", () => {
+  it("continues to run programs for at least 8,000 steps", () => {
     type Repeat<S extends string, N extends number> = Recurse<RepeatSub<S, N, "", []>>;
     type RepeatSub<S extends string, N extends number, R extends string, L extends unknown[]> =
       L["length"] extends N ? R : { __rec: RepeatSub<S, N, `${R}${S}`, [...L, unknown]> };
