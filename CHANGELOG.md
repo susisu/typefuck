@@ -1,3 +1,8 @@
+## 0.5.0 (2024-02-24)
+
+- The package is now ESM/CJS dual (it's type only, though)
+- Some internal refactoring
+
 ## 0.4.0 (2023-08-26)
 
 - Union inputs are now handled distributively
