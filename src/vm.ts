@@ -53,11 +53,11 @@ type NextProc<P, M, I, O, R> =
     : C extends "[" ?
       Read<M> extends "\x00" ?
         State<Q, M, I, O, R, [unknown]>
-      : State<Q, M, I, O, Cons<P, R>, []>
+      : State<Q, M, I, O, Cons<Q, R>, []>
     : C extends "]" ?
-      R extends [] ?
-        never
-      : State<Head<R>, M, I, O, Tail<R>, []>
+      R extends [] ? never
+      : Read<M> extends "\x00" ? State<Q, M, I, O, Tail<R>, []>
+      : State<Head<R>, M, I, O, R, []>
     : State<Q, M, I, O, R, []>
   : never;
 
