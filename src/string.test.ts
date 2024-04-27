@@ -1,5 +1,5 @@
-import type { Equal } from "./__tests__/utils";
-import { describe, it, assert } from "./__tests__/utils";
+import type { Equal } from "./testutils";
+import { describe, it, assert } from "./testutils";
 import type { Head, Tail, Concat } from "./string";
 
 describe("Head", () => {
