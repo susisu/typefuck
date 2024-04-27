@@ -37,21 +37,15 @@ describe("Brainfuck", () => {
     assert<Equal<Output, "Hello, world!" | "!dlrow ,olleH" | "Bye" | "eyB">>();
   });
 
-  it("continues to run programs for at least 8,000 steps", () => {
+  it("continues to run programs for at least 10,000 steps", () => {
     type Repeat<S extends string, N extends number> = Recurse<RepeatSub<S, N, "", []>>;
     type RepeatSub<S extends string, N extends number, R extends string, L extends unknown[]> =
       L["length"] extends N ? R : { __rec: RepeatSub<S, N, `${R}${S}`, [...L, unknown]> };
 
-    type Reverse<S extends string> = Recurse<ReverseSub<S, "">>;
-    type ReverseSub<S extends string, R extends string> =
-      S extends "" ? R
-      : S extends `${infer A}${infer B}` ? { __rec: ReverseSub<B, `${A}${R}`> }
-      : never;
-
     type Program = ">,[>,]<[.<]";
-    type Input = Repeat<"ABCD", 1000>;
+    type Input = Repeat<"ABCD", 1250>;
     type Output = Brainfuck<Program, Input>;
-    type Expected = Reverse<Input>;
+    type Expected = Repeat<"DCBA", 1250>;
     assert<Equal<Output, Expected>>();
   });
 });
