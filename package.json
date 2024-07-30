@@ -40,13 +40,13 @@
     "typescript": ">=4.1.2"
   },
   "devDependencies": {
-    "@susisu/eslint-config": "^0.0.81",
+    "@susisu/eslint-config": "^0.0.85",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
-    "globals": "^15.0.0",
-    "npm-run-all2": "^6.1.2",
-    "prettier": "^3.2.5",
-    "tsup": "^8.0.2",
-    "typescript": "~5.4.5"
+    "globals": "^15.8.0",
+    "npm-run-all2": "^6.2.2",
+    "prettier": "^3.3.3",
+    "tsup": "^8.2.3",
+    "typescript": "~5.5.4"
   }
 }
