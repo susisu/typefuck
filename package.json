@@ -1,6 +1,6 @@
 {
   "name": "@susisu/typefuck",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Type-level Brainfuck interpreter in TypeScript",
   "repository": "https://github.com/susisu/typefuck.git",
   "author": "Susisu <susisu2413@yahoo.co.jp>",

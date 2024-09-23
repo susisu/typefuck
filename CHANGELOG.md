@@ -1,3 +1,8 @@
+## 0.5.1 (2024-09-23)
+
+- Fix ordering in the `exports` field in `package.json`
+- Some internal performance improvements and refactoring
+
 ## 0.5.0 (2024-02-24)
 
 - The package is now ESM/CJS dual (it's type only, though)
