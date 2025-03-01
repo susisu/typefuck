@@ -6,6 +6,13 @@
   "author": "Susisu <susisu2413@yahoo.co.jp>",
   "license": "MIT",
   "type": "module",
+  "sideEffects": false,
+  "files": [
+    "lib",
+    "src",
+    "!src/**/*.{test,spec}.{ts,tsx}",
+    "!src/**/__tests__"
+  ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "exports": {
@@ -20,13 +27,6 @@
       }
     }
   },
-  "files": [
-    "lib",
-    "src",
-    "!src/**/*.{test,spec}.{ts,tsx}",
-    "!src/**/__tests__"
-  ],
-  "sideEffects": false,
   "scripts": {
     "format": "prettier --write src '*.js'",
     "format:check": "prettier --check src '*.js'",
