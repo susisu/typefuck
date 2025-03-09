@@ -1,4 +1,4 @@
-import type { Head, Tail, Concat } from "./string";
+import type { Head, Tail, Concat } from "./string.js";
 
 /**
  * `Memory<L, H, R>` represents a snapshot of the memory.

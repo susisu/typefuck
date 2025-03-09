@@ -1,6 +1,6 @@
-import type { Equal } from "./testutils";
-import { describe, it, assert } from "./testutils";
-import type { Incr, Decr } from "./char";
+import type { Equal } from "./testutils.js";
+import { describe, it, assert } from "./testutils.js";
+import type { Incr, Decr } from "./char.js";
 
 describe("Incr", () => {
   it("incements a character", () => {

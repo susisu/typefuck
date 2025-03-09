@@ -1,6 +1,6 @@
-import type { Equal } from "./testutils";
-import { describe, it, assert } from "./testutils";
-import type { Recurse } from "./utils";
+import type { Equal } from "./testutils.js";
+import { describe, it, assert } from "./testutils.js";
+import type { Recurse } from "./utils.js";
 
 describe("Recurse", () => {
   it("peels nested { __rec: T } objects", () => {

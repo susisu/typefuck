@@ -20,10 +20,6 @@
       "import": {
         "types": "./lib/index.d.ts",
         "default": "./lib/index.js"
-      },
-      "require": {
-        "types": "./lib/index.d.cts",
-        "default": "./lib/index.cjs"
       }
     }
   },
@@ -33,8 +29,11 @@
     "lint": "eslint --fix src '*.js'",
     "lint:check": "eslint src '*.js'",
     "test": "tsc -p tsconfig.json --noEmit",
-    "build": "tsup",
-    "prepublishOnly": "run-s format:check lint:check test build"
+    "build": "tsc --build tsconfig.build.json",
+    "clean": "run-s clean:tsc clean:rm",
+    "clean:tsc": "tsc --build tsconfig.build.json --clean",
+    "clean:rm": "rimraf lib",
+    "prepublishOnly": "run-s clean format:check lint:check test build"
   },
   "peerDependencies": {
     "typescript": ">=4.1.2"
@@ -45,7 +44,7 @@
     "globals": "^16.0.0",
     "npm-run-all2": "^7.0.2",
     "prettier": "^3.5.3",
-    "tsup": "^8.4.0",
+    "rimraf": "^6.0.1",
     "typescript": "~5.8.2"
   }
 }

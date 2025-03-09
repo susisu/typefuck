@@ -1,6 +1,6 @@
-import type { Equal } from "./testutils";
-import { describe, it, assert } from "./testutils";
-import type { Head, Tail, Concat } from "./string";
+import type { Equal } from "./testutils.js";
+import { describe, it, assert } from "./testutils.js";
+import type { Head, Tail, Concat } from "./string.js";
 
 describe("Head", () => {
   it("gets the first character of a string", () => {

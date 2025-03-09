@@ -1,6 +1,6 @@
-import type { Equal } from "./testutils";
-import { describe, it, assert } from "./testutils";
-import type { Head, Tail, Cons } from "./list";
+import type { Equal } from "./testutils.js";
+import { describe, it, assert } from "./testutils.js";
+import type { Head, Tail, Cons } from "./list.js";
 
 describe("Head", () => {
   it("gets the first element of a list", () => {

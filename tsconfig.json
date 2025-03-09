@@ -1,22 +1,22 @@
 {
   "compilerOptions": {
-    "noEmit": true,
-    "rootDir": "src",
-    "outDir": "lib",
     "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "esModuleInterop": true,
-    "lib": ["esnext"],
+    "verbatimModuleSyntax": true,
+    "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
+    "lib": ["esnext"],
     "strict": true,
+    "exactOptionalPropertyTypes": true,
     "noImplicitOverride": true,
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": false,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
     "skipLibCheck": true
   },
   "include": [
-    "src/**/*"
+    "**/*"
   ]
 }

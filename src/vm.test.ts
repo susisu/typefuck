@@ -1,7 +1,7 @@
-import type { Equal } from "./testutils";
-import { describe, it, assert } from "./testutils";
-import type { Brainfuck } from "./vm";
-import type { Recurse } from "./utils";
+import type { Equal } from "./testutils.js";
+import { describe, it, assert } from "./testutils.js";
+import type { Brainfuck } from "./vm.js";
+import type { Recurse } from "./utils.js";
 
 describe("Brainfuck", () => {
   it("runs a simple calculation", () => {

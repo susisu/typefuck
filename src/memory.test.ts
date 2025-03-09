@@ -1,6 +1,6 @@
-import type { Equal } from "./testutils";
-import { describe, it, assert } from "./testutils";
-import type { Memory, Read, Write, MoveL, MoveR } from "./memory";
+import type { Equal } from "./testutils.js";
+import { describe, it, assert } from "./testutils.js";
+import type { Memory, Read, Write, MoveL, MoveR } from "./memory.js";
 
 describe("Read", () => {
   it("reads a character at the current position", () => {

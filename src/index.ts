@@ -1,1 +1,1 @@
-export type { Brainfuck } from "./vm";
+export type { Brainfuck } from "./vm.js";
