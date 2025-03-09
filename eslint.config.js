@@ -71,7 +71,7 @@ export default config(
     files: ["*.js"],
     languageOptions: {
       globals: {
-        ...globals.es2021,
+        ...globals.es2024,
         ...globals.node,
       },
     },
