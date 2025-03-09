@@ -1,3 +1,7 @@
+## 0.6.0 (2025-03-09)
+
+- Remove CJS builds
+
 ## 0.5.1 (2024-09-23)
 
 - Fix ordering in the `exports` field in `package.json`

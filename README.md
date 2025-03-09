@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/susisu/typefuck/workflows/CI/badge.svg)](https://github.com/susisu/typefuck/actions?query=workflow%3ACI)
 
-Type-level [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) interpreter in TypeScript
+A type-level [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) interpreter in TypeScript
 
 ``` shell
 # npm
