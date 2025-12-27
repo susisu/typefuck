@@ -28,10 +28,10 @@
     "format:check": "prettier --check src '*.js'",
     "lint": "eslint --fix src '*.js'",
     "lint:check": "eslint src '*.js'",
-    "test": "tsc -p tsconfig.json --noEmit",
-    "build": "tsc --build tsconfig.build.json",
-    "clean": "run-s clean:tsc clean:rm",
-    "clean:tsc": "tsc --build tsconfig.build.json --clean",
+    "test": "tsgo -p tsconfig.json --noEmit",
+    "build": "tsgo --build tsconfig.build.json",
+    "clean": "run-s clean:tsgo clean:rm",
+    "clean:tsgo": "tsgo --build tsconfig.build.json --clean",
     "clean:rm": "rimraf lib",
     "prepublishOnly": "run-s clean format:check lint:check test build"
   },
@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "@susisu/eslint-config": "^0.0.101",
+    "@typescript/native-preview": "7.0.0-dev.20251227.1",
     "eslint": "^9.39.2",
     "globals": "^16.5.0",
     "npm-run-all2": "^8.0.4",
