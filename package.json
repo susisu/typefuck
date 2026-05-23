@@ -28,7 +28,7 @@
     "format:check": "prettier --check src '*.js'",
     "lint": "eslint --fix src '*.js'",
     "lint:check": "eslint src '*.js'",
-    "test": "run-p test:*",
+    "test": "tsc -p tsconfig.json --noEmit",
     "test:tsgo": "tsgo -p tsconfig.json --noEmit",
     "build": "tsc --build tsconfig.build.json",
     "clean": "run-s clean:tsc clean:rm",
