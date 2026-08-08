@@ -41,10 +41,10 @@
   "devDependencies": {
     "@susisu/eslint-config": "^0.0.102",
     "@typescript/native": "npm:typescript@~7.0.2",
-    "eslint": "^10.2.1",
-    "globals": "^17.5.0",
-    "npm-run-all2": "^8.0.4",
-    "prettier": "^3.8.3",
+    "eslint": "^10.8.0",
+    "globals": "^17.9.0",
+    "npm-run-all2": "^9.0.3",
+    "prettier": "^3.9.6",
     "rimraf": "^6.1.3",
     "typescript": "npm:@typescript/typescript6@~6.0.2"
   }
