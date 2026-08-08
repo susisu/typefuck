@@ -29,7 +29,6 @@
     "lint": "eslint --fix src '*.js'",
     "lint:check": "eslint src '*.js'",
     "test": "tsc -p tsconfig.json --noEmit",
-    "test:tsgo": "tsgo -p tsconfig.json --noEmit",
     "build": "tsc --build tsconfig.build.json",
     "clean": "run-s clean:tsc clean:rm",
     "clean:tsc": "tsc --build tsconfig.build.json --clean",
@@ -41,12 +40,12 @@
   },
   "devDependencies": {
     "@susisu/eslint-config": "^0.0.102",
-    "@typescript/native-preview": "7.0.0-dev.20260522.1",
+    "@typescript/native": "npm:typescript@~7.0.2",
     "eslint": "^10.2.1",
     "globals": "^17.5.0",
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.8.3",
     "rimraf": "^6.1.3",
-    "typescript": "~6.0.3"
+    "typescript": "npm:@typescript/typescript6@~6.0.2"
   }
 }
