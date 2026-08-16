@@ -38,6 +38,11 @@
   "peerDependencies": {
     "typescript": ">=4.1.2"
   },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@susisu/eslint-config": "^0.0.102",
     "@typescript/native": "npm:typescript@~7.0.2",
