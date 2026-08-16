@@ -13,6 +13,8 @@ yarn add @susisu/typefuck
 pnpm add @susisu/typefuck
 ```
 
+**NOTE**: typsecript>=4.1.2 is required.
+
 ## Example
 
 [Playground](https://www.typescriptlang.org/play#code/JYWwDg9gTgLgBDAnmApnA3nAQlAhsAOwDMBXAYwGs4BfOIqCEOAIgAEBnE94TgeiVSlKzANwAoMQLQAFBgHM8TALwsAfABoA2hoC6AHk0A6PTtGTkaAJIEwJeCuYAJFABsXEdXADu0FwBMAQjMpOAB5O1t7bDxCIQo9WQgFXBBPa0jVcV5eOFyAPQB+MSA)
