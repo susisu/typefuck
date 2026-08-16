@@ -1,3 +1,7 @@
+## 0.6.2 (2026-08-16)
+
+- Remove `typescript` from `peerDependencies`
+
 ## 0.6.1 (2026-08-16)
 
 - Mark `typescript` in `peerDependencies` as optional
