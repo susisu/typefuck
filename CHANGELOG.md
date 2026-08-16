@@ -1,3 +1,7 @@
+## 0.6.1 (2026-08-16)
+
+- Mark `typescript` in `peerDependencies` as optional
+
 ## 0.6.0 (2025-03-09)
 
 - Remove CJS builds
