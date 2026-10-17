@@ -1,0 +1,26 @@
+import { defineConfig } from "oxfmt";
+
+export default defineConfig({
+  arrowParens: "always",
+  bracketSameLine: false,
+  bracketSpacing: true,
+  embeddedLanguageFormatting: "auto",
+  endOfLine: "lf",
+  experimentalOperatorPosition: "start",
+  htmlWhitespaceSensitivity: "css",
+  insertFinalNewline: true,
+  jsdoc: false,
+  jsxSingleQuote: false,
+  objectWrap: "preserve",
+  printWidth: 100,
+  proseWrap: "preserve",
+  quoteProps: "as-needed",
+  semi: true,
+  singleAttributePerLine: false,
+  singleQuote: false,
+  sortImports: true,
+  sortPackageJson: true,
+  tabWidth: 2,
+  trailingComma: "all",
+  useTabs: false,
+});

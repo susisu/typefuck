@@ -1,2 +1,2 @@
 minimumReleaseAgeExclude:
-  - '@susisu/oxlint-config@0.0.1'
+  - "@susisu/oxlint-config@0.0.1"

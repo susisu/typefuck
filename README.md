@@ -4,7 +4,7 @@
 
 A type-level [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) interpreter in TypeScript
 
-``` shell
+```shell
 # npm
 npm i --save @susisu/typefuck
 # yarn
@@ -19,7 +19,7 @@ pnpm add @susisu/typefuck
 
 [Playground](https://www.typescriptlang.org/play#code/JYWwDg9gTgLgBDAnmApnA3nAQlAhsAOwDMBXAYwGs4BfOIqCEOAIgAEBnE94TgeiVSlKzANwAoMQLQAFBgHM8TALwsAfABoA2hoC6AHk0A6PTtGTkaAJIEwJeCuYAJFABsXEdXADu0FwBMAQjMpOAB5O1t7bDxCIQo9WQgFXBBPa0jVcV5eOFyAPQB+MSA)
 
-``` typescript
+```typescript
 import type { Brainfuck } from "@susisu/typefuck";
 
 type Program = ">,[>,]<[.<]";

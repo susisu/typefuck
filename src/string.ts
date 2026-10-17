@@ -11,9 +11,4 @@ export type Tail<S> = S extends `${infer _C}${infer R}` ? R : never;
 /**
  * `Concat<S, T>` concatenates a string `S` to another string `T`.
  */
-export type Concat<S, T> =
-  S extends string ?
-    T extends string ?
-      `${S}${T}`
-    : never
-  : never;
+export type Concat<S, T> = S extends string ? (T extends string ? `${S}${T}` : never) : never;

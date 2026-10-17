@@ -1,7 +1,7 @@
 import type { Equal } from "./__tests__/utils.js";
 import { describe, it, assert } from "./__tests__/utils.js";
-import type { Brainfuck } from "./vm.js";
 import type { Recurse } from "./utils.js";
+import type { Brainfuck } from "./vm.js";
 
 describe("Brainfuck", () => {
   it("runs a simple calculation", () => {
@@ -39,8 +39,12 @@ describe("Brainfuck", () => {
 
   it("continues to run programs for at least 10,000 steps", () => {
     type Repeat<S extends string, N extends number> = Recurse<RepeatSub<S, N, "", []>>;
-    type RepeatSub<S extends string, N extends number, R extends string, L extends unknown[]> =
-      L["length"] extends N ? R : { __rec: RepeatSub<S, N, `${R}${S}`, [...L, unknown]> };
+    type RepeatSub<
+      S extends string,
+      N extends number,
+      R extends string,
+      L extends unknown[],
+    > = L["length"] extends N ? R : { __rec: RepeatSub<S, N, `${R}${S}`, [...L, unknown]> };
 
     type Program = ">,[>,]<[.<]";
     type Input = Repeat<"ABCD", 1250>;

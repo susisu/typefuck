@@ -16,7 +16,5 @@
     "noUncheckedIndexedAccess": true,
     "skipLibCheck": true
   },
-  "include": [
-    "**/*"
-  ]
+  "include": ["**/*"]
 }

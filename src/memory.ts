@@ -28,18 +28,18 @@ export type Write<M, C> = M extends Memory<infer L, infer _H, infer R> ? Memory<
  * `MoveL<M>` moves the memory head left.
  */
 export type MoveL<M> =
-  M extends Memory<infer L, infer H, infer R> ?
-    L extends "" ?
-      Memory<"", "\x00", Concat<H, R>>
-    : Memory<Tail<L>, Head<L>, Concat<H, R>>
-  : never;
+  M extends Memory<infer L, infer H, infer R>
+    ? L extends ""
+      ? Memory<"", "\x00", Concat<H, R>>
+      : Memory<Tail<L>, Head<L>, Concat<H, R>>
+    : never;
 
 /**
  * `MoveR<M>` moves the memory head right.
  */
 export type MoveR<M> =
-  M extends Memory<infer L, infer H, infer R> ?
-    R extends "" ?
-      Memory<Concat<H, L>, "\x00", "">
-    : Memory<Concat<H, L>, Head<R>, Tail<R>>
-  : never;
+  M extends Memory<infer L, infer H, infer R>
+    ? R extends ""
+      ? Memory<Concat<H, L>, "\x00", "">
+      : Memory<Concat<H, L>, Head<R>, Tail<R>>
+    : never;
