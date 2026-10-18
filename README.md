@@ -29,8 +29,8 @@ type Output = Brainfuck<Program, Input>; // = "!dlrow ,olleH"
 
 ## License
 
-[MIT License](http://opensource.org/licenses/mit-license.php)
+[MIT License](https://opensource.org/licenses/MIT)
 
 ## Author
 
-Susisu ([GitHub](https://github.com/susisu), [Twitter](https://twitter.com/susisu2413))
+Susisu ([GitHub](https://github.com/susisu), [X (Twitter)](https://x.com/susisu2413))
